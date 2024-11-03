@@ -1,0 +1,96 @@
+#juego{margin-top:10px;}
+#preg_txt{font-weight:bold; font-style:italic; background-color:#F4F5DE; padding:5px;}
+.height-card{min-height:170px;}
+#modal h3{text-align:center;}
+.card {	perspective: 600px;/*Para el volteo*/
+	width: 120px; height: 150px; transition: all .5s; margin:0px auto; }
+.face {	border-radius: 10px; width: 100%; height: 100%; position: absolute; transition-property: opacity, transform, box-shadow; 	transition-duration: .5s; backface-visibility: hidden; }
+.front { background: url(back.png); }
+.back {	background: url(deck.png); transform: rotate3d(0,1,0,-180deg); }
+.card:hover .face, .card-flipped .face { box-shadow: 0 0 15px #333; }
+.card-flipped .front { transform: rotate3d(0,1,0,180deg); }
+.card-flipped .back { transform: rotate3d(0,1,0,0deg); }
+.card-removed {opacity: 0px;}
+/*Sprites*/
+/*.card1_1 {background-position: 0px 0px;}
+.card1_2 {background-position: -120px 0px;}
+.card2_1 {background-position: 0px -150px;}
+.card2_2 {background-position: -120px -150px;}
+.card3_1 {background-position: 0px -300px;}
+.card3_2 {background-position: -120px -300px;}
+.card4_1 {background-position: 0px -450px;}
+.card4_2 {background-position: -120px -450px;}
+.card5_1 {background-position: 0px -600px;}
+.card5_2 {background-position: -120px -600px;}
+.card6_1 {background-position: 0px -750px;}
+.card6_2 {background-position: -120px -750;}
+.card7_1 {background-position: -240px -0;}
+.card7_2 {background-position: -360px -0px;}
+.card8_1 {background-position: -240px -150px;}
+.card8_2 {background-position: -360px -150px;}
+.card9_1 {background-position: -240px -300px;}
+.card9_2 {background-position: -360px -300px;}
+.card10_1 {background-position: -240px -450px;}
+.card10_2 {background-position: -360px -450px;}
+.card11_1 {background-position: -240px -600px;}
+.card11_2 {background-position: -360px -600px;}
+.card12_1 {background-position: -240px -750px;}
+.card12_2 {background-position: -360px -750px;}*/
+
+.card1_1 {background: url(./cosas2/card_01.png);}
+.card1_2 {background: url(./cosas2/card_02.png);}
+.card2_1 {background: url(./cosas2/card_03.png);}
+.card2_2 {background: url(./cosas2/card_04.png);}
+.card3_1 {background: url(./cosas2/card_05.png);}
+.card3_2 {background: url(./cosas2/card_06.png);}
+.card4_1 {background: url(./cosas2/card_07.png);}
+.card4_2 {background: url(./cosas2/card_08.png);}
+.card5_1 {background: url(./cosas2/card_09.png);}
+.card5_2 {background: url(./cosas2/card_10.png);}
+.card6_1 {background: url(./cosas2/card_11.png);}
+.card6_2 {background: url(./cosas2/card_12.png);}
+.card7_1 {background: url(./cosas2/card_13.png);}
+.card7_2 {background: url(./cosas2/card_14.png);}
+.card8_1 {background: url(./cosas2/card_15.png);}
+.card8_2 {background: url(./cosas2/card_16.png);}
+.card9_1 {background: url(./cosas2/card_17.png);}
+.card9_2 {background: url(./cosas2/card_18.png);}
+.card10_1 {background: url(./cosas2/card_19.png);}
+.card10_2 {background: url(./cosas2/card_20.png);}
+.card11_1 {background: url(./cosas2/card_21.png);}
+.card11_2 {background: url(./cosas2/card_22.png);}
+.card12_1 {background: url(./cosas2/card_23.png);}
+.card12_2 {background: url(./cosas2/card_24.png);}
+
+
+@media (max-width:1024px) {
+	.height-card{min-height:130px;}
+	.card {width: 96px; height: 120px;}
+	.front { background-size: 96px 120px; }
+	.back {	background-size: 96px 120px; }
+	/*.back {	background-size: 384px 720px; }
+	.card1_1 {background-position: 0px 0px;}
+	.card1_2 {background-position: -96px 0px;}
+	.card2_1 {background-position: 0px -120px;}
+	.card2_2 {background-position: -96px -120px;}
+	.card3_1 {background-position: 0px -24px;}
+	.card3_2 {background-position: -96px -240px;}
+	.card4_1 {background-position: 0px -360px;}
+	.card4_2 {background-position: -96px -360px;}
+	.card5_1 {background-position: 0px -480px;}
+	.card5_2 {background-position: -96px -480px;}
+	.card6_1 {background-position: 0px -600px;}
+	.card6_2 {background-position: -96px -600;}
+	.card7_1 {background-position: -192px -0;}
+	.card7_2 {background-position: -288px -0px;}
+	.card8_1 {background-position: -192px -120px;}
+	.card8_2 {background-position: -288px -120px;}
+	.card9_1 {background-position: -192px -240px;}
+	.card9_2 {background-position: -288px -240px;}
+	.card10_1 {background-position: -192px -360px;}
+	.card10_2 {background-position: -288px -360px;}
+	.card11_1 {background-position: -192px -480px;}
+	.card11_2 {background-position: -288px -480px;}
+	.card12_1 {background-position: -192px -600px;}
+	.card12_2 {background-position: -288px -600px;}*/
+}

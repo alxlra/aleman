@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link display='standalone' orientation='landscape' rel='manifest'/>
+	<title>Das Ohr</title>
+	<!-- BOOTSTRAP STYLES-->
+	<link href="ohr_files/bootstrap.css" rel="stylesheet" />
+	<link href="ohr_files/mybootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="ohr_files/font-awesome.css" rel="stylesheet" />
+    <link href="ohr_files/style.css" rel="stylesheet" />
+	<link href="ohr_files/aos.css" rel="stylesheet" />
+	<!--CUSTOM STYLES-->
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row height-80">
+			<div class="col-xs-6">
+				<img src="ohr_files/das_Ohr.jpg" class="img-responsive img-center" />
+			</div>
+			<div class="col-xs-6">
+				<img src="ohr_files/tere.jpg" class="img-responsive space-before img-center" />
+			</div>
+		</div>
+		
+		<div class="row" id="preguntas_block">
+			<div class="col-xs-12">
+				<div id="preguntas" class="space-before-2x text-big hidden">
+					<div class="pregunta">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="space-before text-center"><button class="btn btn-success btn-lg" id="btn-preg"><span class="fa fa-refresh"></span> Generar preguntas</button></p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./ohr_files/jquery.js"></script>
+<script src="./ohr_files/jquery.metisMenu.js"></script>
+<script src="./ohr_files/util.js"></script>
+<script src="./ohr_files/aos.js"></script>
+<script src="./ohr_files/preguntas.js"></script>
+<script>
+    AOS.init();
+	var preg_num = [3,3];
+	var preg_actual = [];
+	
+	function inArray(array, value){
+		for(var i=0; i<array.length; i++){
+			if(array[i] == value) return true;
+		}
+		return false;
+	}
+	
+	$(document).ready(function(){
+		$("#btn-preg").click(function() {//
+			
+			$("#preguntas").removeClass("hidden");
+			var pregs = 0;			
+			$("#preguntas .pregunta").not(':first').remove();
+			
+			scrollToElement("#preguntas_block", 500);
+			
+			for(var t=0; t<preguntas.length; t++){//tipo
+				preg_actual = [];
+				for(p = 0; p < preg_num[t]; p++){
+					do{
+						var rand = Math.floor( Math.random() * preguntas[t].length );
+					}while(inArray(preg_actual, rand));
+					preg_actual.push(rand);
+					if(pregs == 0){
+						$("#preguntas .pregunta:first-child").html(preguntas[t][rand]);
+					}else{
+						var clone = $("#preguntas .pregunta:first-child").clone().appendTo("#preguntas");
+						clone.html(preguntas[t][rand]);
+					}
+					pregs++;
+					console.log(pregs);
+				}
+				console.log(preg_actual);
+			}
+			
+			
+			/*$("#preguntas .pregunta").each(function(index) {//cada pregunta
+				$(this).html(preguntas[t][preg_actual[t][index]]);
+			});*/
+		});
+	});
+</script>
+</html>

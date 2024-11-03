@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link display='standalone' orientation='landscape' rel='manifest'/>
+	<title>Brief</title>
+	<!-- BOOTSTRAP STYLES-->
+	<link href="random_files/bootstrap.css" rel="stylesheet" />
+	<link href="random_files/mybootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="random_files/font-awesome.css" rel="stylesheet" />
+    <link href="random_files/style.css" rel="stylesheet" />
+	<!--CUSTOM STYLES-->
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header text-primary">Brief</h1>
+		<div class="row" id="preguntas_block">
+			<div class="col-xs-12">
+				<div id="palabras" class="space-before space-after text-big text-center">
+					<div class="palabra"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="space-before text-center"><button class="btn btn-success btn-lg" id="btn-preg"><span class="fa fa-refresh"></span> Generar palabras</button></p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./random_files/jquery.js"></script>
+<script src="./random_files/jquery.metisMenu.js"></script>
+<script src="./random_files/util.js"></script>
+<script src="./random_files/sustantivos.js"></script>
+<script>
+	var cant_x_tipo = [2, 1, 1, 2, 2];
+	
+	function inArray(array, value){
+		for(var i=0; i<array.length; i++){
+			if(array[i] == value) return true;
+		}
+		return false;
+	}
+	
+	$(document).ready(function(){
+		$("#btn-preg").click(function() {//
+			$("#palabras").removeClass("hidden");
+			$(".plus").removeClass("hidden");
+			var pregs = 0;			
+			$("#palabras .palabra").not(':first').remove();
+			
+			scrollToElement("#preguntas_block", 500);
+			
+			palabra_actual = [];
+			for(var t=0; t<palabras.length; t++){//tipo
+				
+				for(p = 0; p < cant_x_tipo[t]; p++){
+					do{
+						var rand = Math.floor( Math.random() * palabras[t].length );
+					}while(inArray(palabra_actual, rand));
+					palabra_actual.push(rand);
+					if(pregs == 0){
+						$("#palabras .palabra:first-child").html(palabras[t][rand]);
+					}else{
+						var clone = $("#palabras .palabra:first-child").clone().appendTo("#palabras");
+						clone.html(palabras[t][rand]);
+					}
+					pregs++;
+				}
+			}
+		});
+	});
+</script>
+</html>

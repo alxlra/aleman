@@ -1,0 +1,37 @@
+/*===== GENERAL  STYLES===*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);/*Texto comun*/
+body { font-family: 'Poppins', sans-serif; line-height: 24px; font-size: 11pt; letter-spacing:0.5px}
+.img-center{margin: 0 auto;}
+.space-before{margin-top:30px;}
+.space-before-2x{margin-top:60px;}
+.space-before-3x{margin-top:90px;}
+.space-after{margin-bottom:30px;}
+.space-after-2x{margin-bottom:60px;}
+.space-after-3x{margin-bottom:90px;}
+
+.height-80{height:80vh;}
+
+.response-text{font-size:16px;}
+.content .btn{font-family: 'Poppins', sans-serif; }
+.content {min-height:40vh;}
+.hand{cursor:pointer;}
+
+.no-space{margin:0!important; padding:0!important;}
+
+/*==MY  STYLES====*/
+.text-huge{font-size:64px; line-height:70px}
+.text-superhuge{font-size:150px; line-height:160px}
+.text-big{font-size:32px; line-height:48px;}
+.text-small{font-size:13px;}
+.text-normal{font-size:18px;}
+.response-text{font-size:18px;}
+.response-text span { font-size: 24px; margin-right: 5px; }
+.text-instruct{font-size:16px; margin-bottom:20px;}
+
+.pregunta{margin:2em 0; background-color:#e6e6e6; border-radius:10px; padding:0.5em 1em;}
+
+/*--MEDIA QUERIES--*/
+@media (min-width:768px) {
+	.row-eq-height {/*Para que no las alargue en xs*/
+		display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+}

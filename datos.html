@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link display='standalone' orientation='landscape' rel='manifest'/>
+	<title>Person</title>
+	<!-- BOOTSTRAP STYLES-->
+	<link href="random_files/bootstrap.css" rel="stylesheet" />
+	<link href="random_files/mybootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="random_files/font-awesome.css" rel="stylesheet" />
+    <link href="random_files/style.css" rel="stylesheet" />
+	<!--CUSTOM STYLES-->
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header text-primary">Person</h1>
+		<div class="row" id="preguntas_block">
+			<div class="col-xs-12">
+				<div id="palabras" class="space-before space-after text-big text-center">
+					
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+<script src="./random_files/jquery.js"></script>
+<script src="./random_files/jquery.metisMenu.js"></script>
+<script src="./random_files/util.js"></script>
+<script src="./random_files/datos_personas.js"></script>
+<script>
+	
+	
+	$(document).ready(function(){
+		var text = "<p><b><i>&lt;dein Name und dein Alter&gt;</i></b></p><p>"+getProfesion()+"</p><p>"+getCalle()+"</p><p>"+getPais()+"</p><p>"+getEdoCivil()+"</p><p>"+getTelefono()+"</p>";
+		$("#palabras").html(text);
+		
+	});
+</script>
+</html>

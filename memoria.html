@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="icon" type="image/png" href="http://127.0.0.1/plataforma/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1/plataforma/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="http://127.0.0.1/plataforma/favicon-196x196.png" sizes="196x196">
+	<link rel="icon" href="http://127.0.0.1/plataforma/favicon.ico">
+	<link display="standalone" orientation="landscape" rel="manifest">
+
+	<title>Memoria</title>
+
+	<!-- BOOTSTRAP STYLES-->
+	<link href="./memoria_files/bootstrap.css" rel="stylesheet">
+	<link href="./memoria_files/mybootstrap.css" rel="stylesheet">
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="./memoria_files/font-awesome.css" rel="stylesheet">
+    <!--COMMON STYLES-->
+    <link href="./memoria_files/style.css" rel="stylesheet">
+	<!--CUSTOM STYLES-->
+	<link href="./memoria_files/memoria.css" rel="stylesheet">
+
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script src="./memoria_files/util.js"></script>
+	</head>
+<body>
+	<!-- HEADER SECTION START-->
+	
+	<div class="container-fluid content">
+	<!-- INICIO CONTENIDO -->
+		<div>
+			<div class="row space-before" id="top">
+				<div class="col-xs-12 col-md-10 col-md-offset-1">
+					<div>
+						<button type="button" class="btn btn-lg btn-info popup-open" data-loading-text="..."><span class="fa fa-hourglass-half"></span> Abrir cronómetro</button>
+						<button type="button" class="btn btn-success btn-lg comenzar" id="game-start" data-laoging-text="Jugando..."><span class="glyphicon glyphicon-play"></span> Comenzar</button>
+					</div>
+					<div class="comenzar hidden">
+						<h3 id="turno"></h3>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="juego">
+				<aside class="col-xs-1">
+					<div class="row text-big">&nbsp;<br>&nbsp;</div>
+					<div class="row height-card text-big text-right">1</div>
+					<div class="row height-card text-big text-right">2</div>
+					<div class="row height-card text-big text-right">3</div>
+					<div class="row height-card text-big text-right">4</div>
+				</aside>
+				<section class="col-xs-11" id="game">
+					<div class="row">
+						<div class="col-xs-2 text-big text-center">A</div>
+						<div class="col-xs-2 text-big text-center">B</div>
+						<div class="col-xs-2 text-big text-center">C</div>
+						<div class="col-xs-2 text-big text-center">D</div>
+						<div class="col-xs-2 text-big text-center">E</div>
+						<div class="col-xs-2 text-big text-center">F</div>
+					</div>
+					<div class="row height-card">
+						<!--<div class="celda celda-blank col-xs-3">
+							<div class="card" data-pattern="cardA2"><div class="face front"></div><div class="face back cardA2"></div>
+						</div>-->
+						
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+					</div>
+					<div class="row height-card">
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+					</div>
+					<div class="row height-card">
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+					</div>
+					<div class="row height-card">
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+						<div class="celda celda-blank col-xs-2">
+							<div class="card" data-pattern=""><div class="face front"></div><div class="face back "></div></div> 
+						</div>
+					</div>
+					<div class="row space-after-2x">
+						<div class="col-xs-2 text-big text-center">A</div>
+						<div class="col-xs-2 text-big text-center">B</div>
+						<div class="col-xs-2 text-big text-center">C</div>
+						<div class="col-xs-2 text-big text-center">D</div>
+						<div class="col-xs-2 text-big text-center">E</div>
+						<div class="col-xs-2 text-big text-center">F</div>
+					</div>
+				</section>
+			</div>
+			<div class="row">
+				<aside class="col-xs-12 col-md-3 col-sm-4">
+					<div class="panel-group">
+						<div class="panel box-success">
+							<div class="panel-heading">
+								<h2 class="panel-title">Parejas obtenidas</h2>
+							</div>
+							
+							<div class="box-grisclaro">
+								<div class="panel-body" id="resultados">
+									<p class="text-instruct resultado"><strong>Equipo 1</strong>: <span id="pares_1">0</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div><!-- /. CONTENIDO  -->
+	
+	
+	<div class="modal fade" id="modal">
+		<div class="modal-dialog ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" title="" data-original-title="Cerrar"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title"><span class=""></span> &nbsp; <span id="modal_nombre">Pregunta</span></h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" method="post" id="formaModal">
+						<div class="panel box-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">Turno - <span id="quien-modal"></span></h3>
+							</div>
+						</div>
+						<p class="text-instruct"><b><span id="alumno-modal"></span></b> responde la pregunta...</p>
+						<p class="text-small"><em>Si es correcta puedes elegir un par de cartas, de lo contrario el turno pasa al equipo siguiente.</em></p>
+	
+						<div class="space-before">
+							<div class="row">
+								<div class="col-xs-offset-1 col-xs-5">
+									<button type="button" class="btn btn-success btn-lg btn-block " id="resp-ok" data-loading-text="..."><span class="glyphicon glyphicon-ok"></span> Correcta</button>
+								</div>
+								<div class="col-xs-offset-1 col-xs-5">
+									<button type="button" class="btn btn-danger btn-lg btn-block " id="resp-err" data-loading-text="..."><span class="glyphicon glyphicon-remove"></span> Incorrecta</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="modalEnd">
+		<div class="modal-dialog ">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" title="" data-original-title="Cerrar"><span aria-hidden="true">×</span></button>
+					<h4 class="modal-title"><span class=""></span> &nbsp; <span id="modalEnd_nombre">Fin del concurso</span></h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" method="post" id="formaEnd">
+
+						<div class="panel box-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title">El equipo  <span id="quien-gano"></span> es el ganador</h3>
+							</div>
+						</div>
+						<div class="clearfix col-xs-12"><hr></div>
+						<div class="form-group space-before">
+							<div class="col-xs-6 col-md-offset-1 col-md-5">
+								<button type="button" class="btn btn-info btn-lg game-restart" id="resp-err" data-loading-text="..."><span class="glyphicon glyphicon-refresh"></span> <span id="resp-err-texto">Reiniciar</span></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="./memoria_files/jquery.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="./memoria_files/bootstrap.js"></script>
+	<!-- METISMENU SCRIPTS -->
+    <script src="./memoria_files/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="./memoria_files/custom.js"></script>
+		
+	<script>
+		var equipos = [
+			{nombre: 'Equipo 1', pares:0, color: 'box-danger'},
+			{nombre: 'Equipo 2', pares:0, color: 'box-primary'},
+			{nombre: 'Equipo 3', pares:0, color: 'box-success'},
+			{nombre: 'Equipo 4', pares:0, color: 'box-warning'},
+		];
+		var numEquipos = 3;//num de equipos
+		var preguntas = [
+		];
+		var preguntasOld =[];
+		$(document).ready(function(){
+			$(".popup-open").click(function() {//abre cronometro
+				window.open("cronometro.html", null, "height=250,width=400,status=no,toolbar=no,menubar=no,location=no");
+			});
+		});
+	</script>
+	<script src="./memoria_files/memoria.js"></script>
+
+</body></html>

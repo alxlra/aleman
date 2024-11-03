@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://127.0.0.1/plataforma/cronometro.php -->
+<html class="no-js" lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BOOTSTRAP STYLES-->
+	<link href="./memoria_files/bootstrap.css" rel="stylesheet">
+	<link href="./memoria_files/mybootstrap.css" rel="stylesheet">
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="./memoria_files/font-awesome.css" rel="stylesheet">
+    <!--COMMON STYLES-->
+    <link href="./memoria_files/style.css" rel="stylesheet">
+	<title>Cronómetro</title>
+</head>
+<body>
+	<div class="container space-before">
+		<div id="settings" class="time-block">
+			<div class="form-group " id="tiempo_group">
+				<label for="tiempo_id" class="control-label col-sm-4">Tiempo <span class="form-required">*</span></label>
+				<div class="col-sm-8">
+					<select name="tiempo" id="tiempo_id" class="form-control">
+						<option value="10">10 segundos</option><option value="15">15 segundos</option><option value="20" selected="selected">20 segundos</option><option value="30">30 segundos</option><option value="40">40 segundos</option><option value="50">50 segundos</option><option value="60">1 minuto</option><option value="90">1 minuto 30 segundos</option><option value="120">2 minutos</option><option value="300">5 minutos</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group space-before">
+				<div class="col-xs-6 col-md-offset-1 col-md-5">
+					<button type="button" class="btn btn-success btn-lg " id="btn-send" data-loading-text="..."><span class="fa fa-hourglass-start"></span> <span id="btn-send-texto">Comenzar</span></button>
+				</div>
+				
+			</div>
+		</div>
+		<div class="row hidden time-block" id="timer">
+			<div class="col-xs-12 text-huge text-center space-after space-before">
+				<div id="clock">00:00</div>
+			</div>
+			<div class="col-xs-6 text-center">
+				<button class="btn btn-warning btn-lg" id="btn-pausa">Pausar</button>
+			</div>
+			<div class="col-xs-6 text-center">
+				<button class="btn btn-danger btn-lg" id="btn-stop">Detener</button>
+			</div>
+		</div>
+	</div>
+
+	 <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="./memoria_files/jquery.js"></script>
+	<!-- METISMENU SCRIPTS -->
+    <script src="./memoria_files/jquery.metisMenu.js"></script>
+	<script>
+	var running = false;
+	var paused = false;
+	var myInterval;
+	
+	function startTimer(duration, display) {
+		var timer = duration, minutes, seconds;
+		myInterval = setInterval(function () {
+			if(!paused){
+				minutes = parseInt(timer / 60, 10);
+				seconds = parseInt(timer % 60, 10);
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+		
+				display.text(minutes + ":" + seconds);
+				if(timer<=5 && !display.hasClass("clock-danger")){
+					display.addClass("text-danger");
+				}
+				if (--timer < 0) {
+					clearInterval(myInterval);
+					alert("El tiempo se terminó.");
+					running = false;
+				}
+			}
+		}, 1000);
+	}
+	$("document").ready(function(){
+		$("#btn-send").click(function(){
+			$(".time-block").toggleClass("hidden");
+			if(!running){
+				running= true;
+				display = $('#clock');
+				display.removeClass("text-danger");
+				tiempoInicial = $("#tiempo_id").val();
+				startTimer(tiempoInicial, display);
+			}
+		});
+		$("#btn-stop").click(function(){	
+			$(".time-block").toggleClass("hidden");
+			display.text("00:00");
+			if(running){
+				clearInterval(myInterval);
+				running = false;
+			}
+			if(paused){
+				$("#btn-pausa").html("Pausar");
+				paused = false;
+			}
+		});
+		$("#btn-pausa").click(function(e){	
+			e.preventDefault();
+			paused = !paused;
+			if(paused)
+				$(this).html("Continuar");
+			else
+				$(this).html("Pausar");
+		});
+	});
+	</script>
+
+
+</body></html>

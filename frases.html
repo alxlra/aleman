@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link display='standalone' orientation='landscape' rel='manifest'/>
+	<title>Sätze</title>
+	<!-- BOOTSTRAP STYLES-->
+	<link href="random_files/bootstrap.css" rel="stylesheet" />
+	<link href="random_files/mybootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME ICONS STYLES-->
+    <link href="random_files/font-awesome.css" rel="stylesheet" />
+    <link href="random_files/style.css" rel="stylesheet" />
+	<!--CUSTOM STYLES-->
+    <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header text-primary">Sätze</h1>
+		<div class="row" id="preguntas_block">
+			<div class="col-xs-12">
+				<div id="frase" class="space-before-2x text-big text-center"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="space-before text-center"><button class="btn btn-success btn-lg" id="btn-preg"><span class="fa fa-refresh"></span> Generar frase</button></p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="./random_files/jquery.js"></script>
+<script src="./random_files/jquery.metisMenu.js"></script>
+<script src="./random_files/util.js"></script>
+<script src="./random_files/frases.js"></script>
+<script>
+	var palabra_usada = [];
+	
+	function inArray(array, value){
+		for(var i=0; i<array.length; i++){
+			if(array[i] == value) return true;
+		}
+		return false;
+	}
+	
+	$(document).ready(function(){
+		$("#btn-preg").click(function() {//
+			if(palabra.length > 0){
+				$("#frase").removeClass("text-danger");
+				var rand = Math.floor( Math.random() * palabra.length );
+				var e = palabra.splice(rand, 1);
+				palabra_usada.push(e[0]);
+				$("#frase").html(e[0]);
+			}else{
+				$("#frase").html("No hay mas frases.<br><small><i>Presiona el botón para volver a comenzar</i></small>").addClass("text-danger");
+				palabra = palabra_usada;
+				palabra_usada = [];
+			}
+			
+			
+		});
+	});
+</script>
+</html>
